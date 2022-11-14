@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project name="ProbandoAnt" basedir="." default="todo">
+
+<project name="Date" basedir="." default="todo">
     <property name="src" value="src"/>
     <property name="lib" value="lib"/>
     <property name="classes" value="classes"/>
@@ -7,8 +8,8 @@
     <property name="doc" value="doc"/>
     <property name="conf" value="etc"/>
 
-    <property name="paquetes" value="es.unileon.prg1.HolaAlumnos.*"/>
-    <property name="titulo" value="Un ejemplo completo"/>
+    <property name="paquetes" value="es.unileon.prg1.date"/>
+    <property name="titulo" value="Date"/>
 
     <target name="limpiar">
       <delete dir="${classes}"/>
@@ -43,21 +44,21 @@
          compress="true">
          <manifest>
              <attribute name="Main-Class"
-             value="es.unileon.prg1.bar.HolaAlumnos"/>
+             value="es.unileon.prg1.date.MainDate"/>
          </manifest>
       </jar>
       <copy file="LEEME.txt" todir="${src}"/>
-      <zip zipfile="${dist}/HolaAlumno_src.zip" basedir="${src}"
+      <zip zipfile="${dist}/bar_src.zip" basedir="${src}"
          compress="true"/>
     </target>
 
     <target name="probar" depends="compilar">
-      <java classname="es.unileon.prg1.HolaAlumno.HolaAlumnos">
+      <java classname="es.unileon.prg1.date.MainDate">
          <classpath>
               <pathelement path="${classes}"/>
               <pathelement path="${lib}"/>
          </classpath>
-	 <arg value="Pepe"/>
+	 <arg value="A"/>
       </java>
     </target>
 
